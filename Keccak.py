@@ -326,8 +326,9 @@ class Keccak:
                   S[x][y] = S[x][y]^Pi[x][y]
             S = self.KeccakF(S, verbose)
 
-        if verbose:
-            print("Value after absorption : %s" % (self.convertTableToStr(S)))
+        # Don't run Squeezing phase, this is what we get from monero's src/crypto/keccak.c output
+        print("Value after absorption : %s" % (self.convertTableToStr(S)))
+        return
 
         #Squeezing phase
         Z = ''
