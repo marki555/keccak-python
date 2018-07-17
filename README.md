@@ -1,11 +1,11 @@
 Keccak in Python
 ================
 This is Keccak.py implementation. To get the same output as keccak1600() in monero's slow_hash, the squeezing part if omitted.
-It is Keccak-256 (with b=1600, c=512, r=1088) and "output" of 1600 bits .
+It is Keccak-256 (with b=1600, c=512, r=1088) and "output" of 1600 bits). The input to slow_hash during pool mining will be blob of 152 chars (hex encoded 76 bytes).
 To run (`s` is the input in hex digits, `True` is for debug state after each round):
 ```
 $ python
->>> s='aabbcc
+>>> s='aabbcc'
 >>> import Keccak
 >>> myKeccak=Keccak.Keccak()
 >>> myKeccak.Keccak((len(s)*4,s),1088,512,1600,True)
